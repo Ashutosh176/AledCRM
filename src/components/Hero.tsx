@@ -63,6 +63,7 @@ const Hero: React.FC<HeroProps> = ({ onSignupClick }) => {
               <p className="text-gray-400 text-center">Automate repetitive tasks and focus on what matters most</p>
             </div>
           </div>
+          
         </div>
       </div>
     </section>

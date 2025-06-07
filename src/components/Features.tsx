@@ -1,121 +1,156 @@
 import React from 'react';
 import { 
+  Kanban, 
   Users, 
-  BarChart3, 
+  Package, 
   Calendar, 
+  RefreshCcw, 
   Mail, 
+  Filter, 
+  Zap, 
   Phone, 
+  FormInput, 
+  Shield, 
+  Webhook,
   Target,
-  Zap,
-  Shield,
-  Globe
+  Clock
 } from 'lucide-react';
 
-const Features: React.FC = () => {
+const Features = () => {
   const features = [
     {
-      icon: Users,
-      title: 'Contact Management',
-      description: 'Centralize all customer information, track interactions, and maintain detailed contact profiles with custom fields and tags.',
-      color: 'orange'
+      icon: <Kanban className="w-8 h-8" />,
+      title: "Deals Management",
+      description: "Kanban boards with multiple customizable pipelines for visual deal tracking"
     },
     {
-      icon: BarChart3,
-      title: 'Sales Pipeline',
-      description: 'Visualize your sales process, track deals through stages, and forecast revenue with advanced analytics.',
-      color: 'emerald'
+      icon: <Users className="w-8 h-8" />,
+      title: "Contacts & Companies",
+      description: "Comprehensive contact management with company hierarchies and relationships"
     },
     {
-      icon: Calendar,
-      title: 'Task & Activity Tracking',
-      description: 'Schedule meetings, set reminders, and track all customer touchpoints to never miss an opportunity.',
-      color: 'amber'
+      icon: <Package className="w-8 h-8" />,
+      title: "Products Module",
+      description: "Complete product catalog with pricing, inventory, and quote generation"
     },
     {
-      icon: Mail,
-      title: 'Email Integration',
-      description: 'Sync your email, track opens and clicks, and manage email campaigns directly from your CRM.',
-      color: 'purple'
+      icon: <Calendar className="w-8 h-8" />,
+      title: "Activities & Calendar",
+      description: "Integrated calendar with activities, tasks, and smart reminders"
     },
     {
-      icon: Phone,
-      title: 'Call Management',
-      description: 'Log calls automatically, record conversations, and track communication history with integrated VoIP.',
-      color: 'pink'
+      icon: <RefreshCcw className="w-8 h-8" />,
+      title: "Two-way Calendar Sync",
+      description: "Seamless synchronization with Google Calendar and Outlook"
     },
     {
-      icon: Target,
-      title: 'Lead Scoring',
-      description: 'Automatically score leads based on behavior and engagement to prioritize your sales efforts.',
-      color: 'indigo'
+      icon: <Mail className="w-8 h-8" />,
+      title: "Built-in Email Client",
+      description: "Native email integration with Gmail, Outlook, and IMAP support"
     },
     {
-      icon: Zap,
-      title: 'Workflow Automation',
-      description: 'Create custom workflows to automate repetitive tasks and ensure consistent follow-up processes.',
-      color: 'orange'
+      icon: <Filter className="w-8 h-8" />,
+      title: "Advanced Filters",
+      description: "Powerful filtering and field mapping for precise data management"
     },
     {
-      icon: Shield,
-      title: 'Data Security',
-      description: 'Enterprise-grade security with encryption, role-based access control, and compliance standards.',
-      color: 'red'
+      icon: <Zap className="w-8 h-8" />,
+      title: "Automation Workflows",
+      description: "Smart automation to streamline repetitive tasks and processes"
     },
     {
-      icon: Globe,
-      title: 'Multi-language Support',
-      description: 'Support for multiple languages and currencies to manage global customer relationships.',
-      color: 'teal'
+      icon: <Phone className="w-8 h-8" />,
+      title: "In-App Calling",
+      description: "Built-in calling system with call logs and VOIP integration"
+    },
+    {
+      icon: <FormInput className="w-8 h-8" />,
+      title: "Web Forms",
+      description: "Customizable lead capture forms with automatic CRM integration"
+    },
+    {
+      icon: <Shield className="w-8 h-8" />,
+      title: "Roles & Permissions",
+      description: "Granular access control with custom fields and user management"
+    },
+    {
+      icon: <Webhook className="w-8 h-8" />,
+      title: "API & Webhooks",
+      description: "Comprehensive API access with webhook support for integrations"
+    },
+    {
+      icon: <Target className="w-8 h-8" />,
+      title: "SLA Automation",
+      description: "Service level agreement tracking with automated escalations"
+    },
+    {
+      icon: <Clock className="w-8 h-8" />,
+      title: "1-Click Updates",
+      description: "Instant system updates and patches with zero downtime"
     }
   ];
 
-  const getColorClasses = (color: string) => {
-    const colorMap: { [key: string]: string } = {
-      orange: 'from-orange-500/20 to-orange-400/20 text-orange-500',
-      emerald: 'from-emerald-500/20 to-emerald-400/20 text-emerald-500',
-      amber: 'from-amber-500/20 to-amber-400/20 text-amber-500',
-      purple: 'from-purple-500/20 to-purple-400/20 text-purple-500',
-      pink: 'from-pink-500/20 to-pink-400/20 text-pink-500',
-      indigo: 'from-indigo-500/20 to-indigo-400/20 text-indigo-500',
-      red: 'from-red-500/20 to-red-400/20 text-red-500',
-      teal: 'from-teal-500/20 to-teal-400/20 text-teal-500'
-    };
-    return colorMap[color] || colorMap.orange;
-  };
-
   return (
-    <section id="features" className="py-20 bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="features" className="py-20 bg-gradient-to-br from-gray-900 to-black">
+      <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Everything You Need to Grow Your Business
+          <div className="inline-block px-4 py-2 bg-gray-900/50 bg-blue-100 text-blue-600 rounded-full text-sm font-semibold mb-4">
+            Built for Sales Teams
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold  text-white mb-6">
+            Everything You Need to Close More Deals
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Our comprehensive CRM platform provides all the tools and features you need 
-            to manage customer relationships, streamline sales processes, and drive growth.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Comprehensive CRM features designed to streamline your sales process, 
+            improve team collaboration, and accelerate revenue growth.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
-            return (
-              <div
-                key={index}
-                className="p-8 bg-gray-900/50 rounded-2xl border border-gray-800 hover:border-orange-500/50 hover:shadow-xl transition-all duration-300 group"
-              >
-                <div className={`bg-gradient-to-r ${getColorClasses(feature.color)} p-4 rounded-xl mb-6 inline-block group-hover:scale-110 transition-transform duration-200`}>
-                  <Icon className="h-8 w-8" />
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-4">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-400 leading-relaxed">
-                  {feature.description}
-                </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          {features.map((feature, index) => (
+            <div 
+              key={index} 
+              className="group p-6  rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+            >
+              <div className="text-blue-600 mb-4 group-hover:scale-110 transition-transform duration-300">
+                {feature.icon}
               </div>
-            );
-          })}
+              <h3 className="text-lg font-semibold text-white mb-2">
+                {feature.title}
+              </h3>
+              <p className="text-gray-600 text-sm">
+                {feature.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-16 text-center ">
+          <div className=" bg-gray-900 from-blue-50 to-purple-50 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Powerful Integrations
+            </h3>
+            <p className="text-gray-600 mb-6">
+              Connect with your favorite tools and services
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <span className="px-4 py-2 bg-white rounded-lg text-sm font-medium text-gray-700 shadow-sm">
+                Zapier
+              </span>
+              <span className="px-4 py-2 bg-white rounded-lg text-sm font-medium text-gray-700 shadow-sm">
+                Telecorce VOIP
+              </span>
+              <span className="px-4 py-2 bg-white rounded-lg text-sm font-medium text-gray-700 shadow-sm">
+                WhatsApp (Doublick API)
+              </span>
+              <span className="px-4 py-2 bg-white rounded-lg text-sm font-medium text-gray-700 shadow-sm">
+                Google Workspace
+              </span>
+              <span className="px-4 py-2 bg-white rounded-lg text-sm font-medium text-gray-700 shadow-sm">
+                Microsoft 365
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
