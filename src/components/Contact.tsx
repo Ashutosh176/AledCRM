@@ -6,19 +6,18 @@ const Contact: React.FC = () => {
     name: '',
     email: '',
     company: '',
+    teamSize: '',
     message: ''
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
     console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({ name: '', email: '', company: '', message: '' });
-    alert('Thank you for your message! We\'ll get back to you soon.');
+    setFormData({ name: '', email: '', company: '', teamSize: '', message: '' });
+    alert("Thank you for your message! We'll get back to you soon.");
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -26,134 +25,122 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-gray-900 to-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id = "Contact" className="pt-20 pb-16 bg-gradient-to-br from-black via-gray-900 to-black px-4 text-center">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Get in Touch
-          </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Ready to transform your business? Contact us today and let's discuss 
-            how Aled CRM can help you achieve your goals.
-          </p>
+          <h2 className="text-4xl font-extrabold mb-4 text-white">Ready to Transform Your Sales Process?</h2>
+          <p className="text-lg text-gray-100">Schedule a personalized demo and see how ALED CRM can boost your team's productivity</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div>
-            <h3 className="text-2xl font-bold text-white mb-8">Contact Information</h3>
-            
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="bg-gradient-to-r from-orange-500/20 to-orange-400/20 p-3 rounded-xl">
-                  <Mail className="h-6 w-6 text-orange-500" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-white mb-1">Email Us</h4>
-                  <p className="text-gray-400">hello@aledcrm.com</p>
-                  <p className="text-gray-400">support@aledcrm.com</p>
-                </div>
-              </div>
+        <div className="grid md:grid-cols-2 gap-10 items-start">
+          {/* Left Side */}
+          <div className="bg-white/10 p-8 rounded-2xl">
+            <h3 className="text-2xl font-bold mb-6 text-white">What You'll Get:</h3>
+            <ul className="text-gray-100 space-y-4 list-disc list-inside">
+              <li>30-minute personalized demo</li>
+              <li>Custom setup recommendations</li>
+              <li>Q&A with our CRM experts</li>
+              <li>Free trial setup assistance</li>
+              <li>Implementation roadmap</li>
+              <li>ROI calculation for your business</li>
+            </ul>
 
-              <div className="flex items-start gap-4">
-                <div className="bg-gradient-to-r from-emerald-500/20 to-emerald-400/20 p-3 rounded-xl">
-                  <Phone className="h-6 w-6 text-emerald-500" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-white mb-1">Call Us</h4>
-                  <p className="text-gray-400">+1 (555) 123-4567</p>
-                  <p className="text-gray-400">Monday - Friday, 9AM - 6PM EST</p>
-                </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10 text-center">
+              <div className="bg-white/10 rounded-xl p-4">
+                <p className="text-yellow-300 font-bold text-xl">📅</p>
+                <p className="mt-2 text-sm font-medium text-white">Flexible<br />Schedule</p>
               </div>
-
-              <div className="flex items-start gap-4">
-                <div className="bg-gradient-to-r from-amber-500/20 to-amber-400/20 p-3 rounded-xl">
-                  <MapPin className="h-6 w-6 text-amber-500" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-white mb-1">Visit Us</h4>
-                  <p className="text-gray-400">123 Business Avenue</p>
-                  <p className="text-gray-400">Suite 100, San Francisco, CA 94102</p>
-                </div>
+              <div className="bg-white/10 rounded-xl p-4">
+                <p className="text-yellow-300 font-bold text-xl">⏱️</p>
+                <p className="mt-2 text-sm font-medium text-white">30 Min<br />Duration</p>
+              </div>
+              <div className="bg-white/10 rounded-xl p-4">
+                <p className="text-yellow-300 font-bold text-xl">🧑‍💼</p>
+                <p className="mt-2 text-sm font-medium text-white">Expert<br />Guidance</p>
               </div>
             </div>
           </div>
 
-          <div>
-            <form onSubmit={handleSubmit} className="bg-gray-900/50 p-8 rounded-2xl shadow-lg border border-gray-800">
-              <h3 className="text-2xl font-bold text-white mb-6">Send us a Message</h3>
-              
-              <div className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-colors duration-200 text-white placeholder-gray-400"
-                    placeholder="Enter your full name"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-colors duration-200 text-white placeholder-gray-400"
-                    placeholder="Enter your email address"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-2">
-                    Company Name
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-colors duration-200 text-white placeholder-gray-400"
-                    placeholder="Enter your company name"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                    Message *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={4}
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-colors duration-200 resize-none text-white placeholder-gray-400"
-                    placeholder="Tell us about your needs..."
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-orange-600 to-orange-500 text-white py-3 px-6 rounded-lg font-semibold hover:from-orange-700 hover:to-orange-600 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
-                >
-                  Send Message
-                  <Send className="h-5 w-5" />
-                </button>
+          {/* Right Side Form */}
+          <div className="bg-white/10 p-8 rounded-2xl">
+            <h3 className="text-2xl font-bold mb-6 text-white">Schedule Your Demo</h3>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label className="block mb-1 text-sm font-medium text-white">Full Name *</label>
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg"
+                  placeholder="John Doe"
+                />
               </div>
+
+              <div>
+                <label className="block mb-1 text-sm font-medium text-white">Email Address *</label>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg"
+                  placeholder="john@company.com"
+                />
+              </div>
+
+              <div>
+                <label className="block mb-1 text-sm font-medium text-white">Company Name *</label>
+                <input
+                  type="text"
+                  name="company"
+                  required
+                  value={formData.company}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg"
+                  placeholder="Your Company"
+                />
+              </div>
+
+              <div>
+                <label className="block mb-1 text-sm font-medium text-white">Team Size</label>
+                <select
+                  name="teamSize"
+                  value={formData.teamSize}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg"
+                >
+                  <option value="">Select team size</option>
+                  <option value="1-10">1-10</option>
+                  <option value="11-50">11-50</option>
+                  <option value="51-100">51-100</option>
+                  <option value="100+">100+</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block mb-1 text-sm font-medium text-white">Tell us about your needs (optional)</label>
+                <textarea
+                  name="message"
+                  rows={4}
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg resize-none"
+                  placeholder="What challenges are you looking to solve?"
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-orange-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-200"
+              >
+                Schedule My Demo
+              </button>
+              <p className="text-sm text-gray-600 mt-2 text-white">
+                We’ll contact you within 24 hours to schedule your personalized demo.
+              </p>
             </form>
           </div>
         </div>

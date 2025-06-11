@@ -54,17 +54,33 @@ const Footer: React.FC = () => {
             
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-gray-400">
-                <Mail className="h-5 w-5" />
-                <span>hello@aledcrm.com</span>
-              </div>
+  <Mail className="h-5 w-5" />
+  <a href="mailto:info@aledtechnologies.in" className="hover:underline">
+    info@aledtechnologies.in
+  </a>
+</div>
+
               <div className="flex items-center gap-3 text-gray-400">
-                <Phone className="h-5 w-5" />
-                <span>+1 (555) 123-4567</span>
-              </div>
+  <Phone className="h-5 w-5" />
+  <a href="tel:+919608785613" className="hover:underline">
+    +91 960 878 5613
+  </a>
+</div>
+
               <div className="flex items-center gap-3 text-gray-400">
-                <MapPin className="h-5 w-5" />
-                <span>San Francisco, CA</span>
-              </div>
+  <MapPin className="h-5 w-5" />
+  <a
+    href="https://www.google.com/maps/search/?api=1&query=LG+006,+DLF+GRAND+MALL,+M.G+ROAD,+Gurgaon,+Sadar+Bazar,+Gurgaon-122001,+Haryana"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:underline"
+  >
+    LG 006, DLF GRAND MALL, M.G ROAD
+    <br />
+    Gurgaon, Sadar Bazar, Gurgaon- 122001, Haryana
+  </a>
+</div>
+
             </div>
           </div>
 

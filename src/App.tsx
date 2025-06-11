@@ -8,6 +8,10 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import LoginModal from './components/LoginModal';
 import SignupModal from './components/SignupModal';
+import CrmInAction from './components/CrmInAction';
+import Testimonials from './components/Testimonial'; // ✅ Added testimonial section
+import BookDemo from './components/DemoVideo'
+import DemoVideo from './components/DemoVideo';
 
 function App() {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
@@ -36,6 +40,9 @@ function App() {
       />
       <Hero onSignupClick={handleOpenSignup} />
       <Features />
+      <CrmInAction /> {/* ✅ Added CRM in action section */}
+      <DemoVideo />
+      <Testimonials /> {/* ✅ Added testimonial section */}
       <Pricing onSignupClick={handleOpenSignup} />
       <About />
       <Contact />

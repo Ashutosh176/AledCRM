@@ -6,6 +6,10 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ onSignupClick }) => {
+  const scrollToDemoSection = () => {
+    document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section className="pt-20 pb-16 bg-gradient-to-br from-black via-gray-900 to-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,10 +30,14 @@ const Hero: React.FC<HeroProps> = ({ onSignupClick }) => {
               onClick={onSignupClick}
               className="bg-gradient-to-r from-orange-600 to-orange-500 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-orange-700 hover:to-orange-600 transition-all duration-200 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center gap-2"
             >
-              Start Free Trial
+              Book Free Demo
               <ArrowRight className="h-5 w-5" />
             </button>
-            <button className="text-orange-500 font-semibold text-lg hover:text-orange-400 transition-colors duration-200 flex items-center gap-2">
+
+            <button
+              onClick={scrollToDemoSection}
+              className="text-orange-500 font-semibold text-lg hover:text-orange-400 transition-colors duration-200 flex items-center gap-2"
+            >
               Watch Demo
               <div className="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center hover:bg-orange-500/30 transition-colors duration-200">
                 <div className="w-0 h-0 border-l-[8px] border-l-orange-500 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent ml-1"></div>
@@ -63,7 +71,6 @@ const Hero: React.FC<HeroProps> = ({ onSignupClick }) => {
               <p className="text-gray-400 text-center">Automate repetitive tasks and focus on what matters most</p>
             </div>
           </div>
-          
         </div>
       </div>
     </section>

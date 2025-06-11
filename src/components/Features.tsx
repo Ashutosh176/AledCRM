@@ -90,14 +90,25 @@ const Features = () => {
     }
   ];
 
+  const integrations = [
+    { name: 'Zapier', icon: <Zap className="w-6 h-6 text-white" /> },
+    { name: 'Teleforce VOIP', icon: <Phone className="w-6 h-6 text-white" /> },
+    { name: 'Google Workspace', icon: <Calendar className="w-6 h-6 text-white" /> },
+    { name: 'WhatsApp (Doublick API)', icon: <Phone className="w-6 h-6 text-white" /> },
+    { name: 'Microsoft 365', icon: <Mail className="w-6 h-6 text-white" /> },
+    { name: 'Pusher', icon: <RefreshCcw className="w-6 h-6 text-white" /> },
+    { name: 'Google', icon: <Shield className="w-6 h-6 text-white" /> },
+    { name: 'Twilio', icon: <Phone className="w-6 h-6 text-white" /> },
+  ];
+
   return (
     <section id="features" className="py-20 bg-gradient-to-br from-gray-900 to-black">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <div className="inline-block px-4 py-2 bg-gray-900/50 bg-blue-100 text-blue-600 rounded-full text-sm font-semibold mb-4">
+          <div className="inline-block px-4 py-2 bg-blue-100 text-white-600 rounded-full text-sm font-semibold mb-4">
             Built for Sales Teams
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold  text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Everything You Need to Close More Deals
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -110,48 +121,43 @@ const Features = () => {
           {features.map((feature, index) => (
             <div 
               key={index} 
-              className="group p-6  rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+              className="group p-6 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
             >
               <div className="text-blue-600 mb-4 group-hover:scale-110 transition-transform duration-300">
                 {feature.icon}
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">
+              <h3 className="text-orange-500 font-semibold text-lg hover:text-orange-400 transition-colors duration-200 flex items-center gap-2">
                 {feature.title}
               </h3>
-              <p className="text-gray-600 text-sm">
+              <p className="text-white text-sm">
                 {feature.description}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 text-center ">
-          <div className=" bg-gray-900 from-blue-50 to-purple-50 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Powerful Integrations
-            </h3>
-            <p className="text-gray-600 mb-6">
-              Connect with your favorite tools and services
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <span className="px-4 py-2 bg-white rounded-lg text-sm font-medium text-gray-700 shadow-sm">
-                Zapier
-              </span>
-              <span className="px-4 py-2 bg-white rounded-lg text-sm font-medium text-gray-700 shadow-sm">
-                Telecorce VOIP
-              </span>
-              <span className="px-4 py-2 bg-white rounded-lg text-sm font-medium text-gray-700 shadow-sm">
-                WhatsApp (Doublick API)
-              </span>
-              <span className="px-4 py-2 bg-white rounded-lg text-sm font-medium text-gray-700 shadow-sm">
-                Google Workspace
-              </span>
-              <span className="px-4 py-2 bg-white rounded-lg text-sm font-medium text-gray-700 shadow-sm">
-                Microsoft 365
-              </span>
-            </div>
-          </div>
+        <div className="mt-16 text-center">
+  <div className="bg-transparent p-8">
+    <h3 className="text-2xl font-bold text-white mb-4">
+      Powerful Integrations
+    </h3>
+    <p className="text-gray-600 mb-10">
+      Connect with your favorite tools and services
+    </p>
+    <div className="flex flex-wrap justify-center gap-x-20 gap-y-10">
+      {integrations.map((integration, idx) => (
+        <div
+          key={idx}
+          className="flex flex-col items-center text-white"
+        >
+          {integration.icon}
+          <span className="text-sm font-medium mt-2">{integration.name}</span>
         </div>
+      ))}
+    </div>
+  </div>
+</div>
+
       </div>
     </section>
   );
