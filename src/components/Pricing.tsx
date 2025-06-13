@@ -92,26 +92,29 @@ const Pricing: React.FC<PricingProps> = ({ onSignupClick }) => {
 
         {/* Toggle billing cycle */}
         <div className="flex justify-center mb-20">
-          <div className="flex bg-white p-1 rounded-full shadow-md">
-            {['monthly', 'quarterly', 'yearly'].map((type) => (
-              <div
-                key={type}
-                className={`relative px-5 py-2 rounded-full cursor-pointer text-sm font-medium transition-all duration-300 ${
-                  billingCycle === type ? 'ring-2 ring-orange-500 text-black' : 'text-gray-700'
-                }`}
-                onClick={() => setBillingCycle(type as 'monthly' | 'quarterly' | 'yearly')}
-              >
-                {type.charAt(0).toUpperCase() + type.slice(1)}
+  <div className="flex bg-white p-1 rounded-full shadow-md">
+    {['monthly', 'quarterly', 'yearly'].map((type) => (
+      <div
+        key={type}
+        className={`relative px-5 py-2 rounded-full cursor-pointer text-sm font-medium transition-all duration-300 ${
+          billingCycle === type
+            ? 'bg-orange-500 text-white'
+            : 'text-gray-700 hover:bg-orange-100'
+        }`}
+        onClick={() => setBillingCycle(type as 'monthly' | 'quarterly' | 'yearly')}
+      >
+        {type.charAt(0).toUpperCase() + type.slice(1)}
 
-                {(type === 'quarterly' || type === 'yearly') && (
-                  <span className="absolute -top-2 -right-2 bg-green-500 text-white text-[10px] px-2 py-[2px] rounded-full font-semibold">
-                    {type === 'quarterly' ? '10%' : '20%'}
-                  </span>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
+        {(type === 'quarterly' || type === 'yearly') && (
+          <span className="absolute -top-2 -right-2 bg-green-500 text-white text-[10px] px-2 py-[2px] rounded-full font-semibold">
+            {type === 'quarterly' ? '10%' : '20%'}
+          </span>
+        )}
+      </div>
+    ))}
+  </div>
+</div>
+
 
         {/* Pricing cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">

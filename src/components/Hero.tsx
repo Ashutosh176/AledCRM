@@ -11,9 +11,9 @@ const Hero: React.FC<HeroProps> = ({ onSignupClick }) => {
   };
 
   return (
-    <section className="pt-20 pb-16 bg-gradient-to-br from-black via-gray-900 to-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-4xl mx-auto">
+<section className="pt-40 pb-16 bg-gradient-to-br from-black via-gray-900 to-black">
+      <div className="max-w-[95rem] mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="text-center max-w-6xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
             Transform Your Business with{' '}
             <span className="bg-gradient-to-r from-orange-500 to-orange-400 bg-clip-text text-transparent">
@@ -30,7 +30,7 @@ const Hero: React.FC<HeroProps> = ({ onSignupClick }) => {
               onClick={onSignupClick}
               className="bg-gradient-to-r from-orange-600 to-orange-500 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-orange-700 hover:to-orange-600 transition-all duration-200 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center gap-2"
             >
-              Book Free Demo
+              Book Live Demo
               <ArrowRight className="h-5 w-5" />
             </button>
 
@@ -46,7 +46,7 @@ const Hero: React.FC<HeroProps> = ({ onSignupClick }) => {
           </div>
 
           {/* Feature Icons */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+<div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div className="flex flex-col items-center p-6 bg-gray-900/50 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-200 border border-gray-800">
               <div className="bg-gradient-to-r from-orange-500/20 to-orange-400/20 p-4 rounded-xl mb-4">
                 <Users className="h-8 w-8 text-orange-500" />
